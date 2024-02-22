@@ -1,606 +1,282 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)https://wandering-recipe-6621.animaapp.io/frame-4?t=_8cc54efc&handoff=1 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbo-progress-bar {
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: #0076ff;
-  z-index: 9999;
-  transition:
-    width 300ms ease-out,
-    opacity 150ms 150ms ease-in;
-  transform: translate3d(0, 0, 0);
-}
-</style><style id="st_globalStyles">
-/* SCROLLBAR */
-
-[dark-scroll]::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-[dark-scroll]::-webkit-scrollbar-track-piece {
-  background-color: #2b2b2b;
-  border: 1px solid #1d1d1d;
-}
-
-[dark-scroll]::-webkit-scrollbar-thumb {
-  height: 10px;
-  background-color: #4d4d4d;
-}
-[dark-scroll]::-webkit-scrollbar-thumb:hover {
-  background-color: #5a5a5a;
-}
-
-/* LOAD PROGRESS */
-
-.turbolinks-progress-bar {
-  height: 3px;
-  background-color: #ff6250;
-}
-
-/* GROUPING */
-
-[data-id].ui-selecting {
-  box-shadow: inset 0 0 0 1px #4285f4 !important;
-}
-[data-id].ui-selected {
-  box-shadow: inset 0 0 0 1px #4285f4 !important;
-}
-
-/* CURSOR */
-
-body[mode='comments'] * {
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K')
-      0 24,
-    auto !important;
-}
-
-body[mode='code'] [data-id]:not(.hidden) {
-  cursor: default;
-}
-
-/* default node state */
-
-body[mode='code'] [data-id]:not(.hidden), body[mode='comments'] [data-id]:not(.hidden) {
-  pointer-events: all;
-}
-
-/* is_image */
-
-body[mode='code'] [data-id].is_image [data-id], body[mode='comments'] [data-id].is_image [data-id] {
-  pointer-events: none !important;
-}
-
-/* without a data-id or ignored */
-
-[data-id].ignore,body[mode='code'] *:not([data-id]) {
-  pointer-events: none !important;
-}
-/* disable transforms for ignored elements */
-
-
-body[mode='code'] [data-id]:hover{
-  transform: none !important;
-}
-
-div[class^='i-o-sparts']{
-  pointer-events: none !important;
-}
-
-</style><meta name="viewport" content="width=1366, maximum-scale=1.0"><link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"><meta name="og:type" content="website"><meta name="twitter:card" content="photo"><script id="anima-hotspots-script" src="./frame-4_files/hotspots.js.загрузка"></script><style id="hotspots-styles">
-    .hotspot {
-      position: absolute;
-      border: 1px solid #2a9fd8;
-      background: rgba(0, 173, 255, 0.54);
-      opacity: 0;
-      z-index: -1;
-      pointer-events:none;
-    }
-  </style><style id="hide-styles">
-    .hotspot {
-      display:none !important;
-    }
-  </style><script id="s_turbo" src="./frame-4_files/turbo.es2017-umd.js.загрузка"></script><script id="anima-overrides-script" src="./frame-4_files/overrides.js.загрузка"></script><script src="./frame-4_files/timeline.js.загрузка"></script><style>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-@font-face {
-  font-family: "Bebas Neue Cyrillic-Regular";
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://anima-uploads.s3.amazonaws.com/projects/657c508f265283a56c3eeec3/fonts/bebasneue-regular.otf') format("opentype");
-}
-/* The following line is used to measure usage of this code. You can remove it if you want. */
-@import url("https://px.animaapp.com/65d760ad2b6c6b373de0eb60.65d760ae2b6c6b373de0eb63.GFVauXl.hch.png");
-
-
-.screen textarea:focus,
-.screen input:focus {
-  outline: none;
-}
-
-.screen * {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-.screen div {
-  -webkit-text-size-adjust: none;
-}
-
-.component-wrapper a {
-  display: contents;
-  pointer-events: auto;
-  text-decoration: none;
-}
-
-.component-wrapper * {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  pointer-events: none;
-}
-
-.component-wrapper a *,
-.component-wrapper input,
-.component-wrapper video,
-.component-wrapper iframe {
-  pointer-events: auto;
-}
-
-.component-wrapper.not-ready,
-.component-wrapper.not-ready * {
-  visibility: hidden !important;
-}
-
-.screen a {
-  display: contents;
-  text-decoration: none;
-}
-
-.full-width-a {
-  width: 100%;
-}
-
-.full-height-a {
-  height: 100%;
-}
-
-.container-center-vertical {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  pointer-events: none;
-}
-
-.container-center-vertical > * {
-  flex-shrink: 0;
-  pointer-events: auto;
-}
-
-.container-center-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  pointer-events: none;
-  width: 100%;
-}
-
-.container-center-horizontal > * {
-  flex-shrink: 0;
-  pointer-events: auto;
-}
-
-.auto-animated div {
-  --z-index: -1;
-  opacity: 0;
-  position: absolute;
-}
-
-.auto-animated input {
-  --z-index: -1;
-  opacity: 0;
-  position: absolute;
-}
-
-.auto-animated .container-center-vertical,
-.auto-animated .container-center-horizontal {
-  opacity: 1;
-}
-
-.overlay-base {
-  display: none;
-  height: 100%;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.overlay-base.animate-appear {
-  align-items: center;
-  animation: reveal 0.3s ease-in-out 1 normal forwards;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-}
-
-.overlay-base.animate-disappear {
-  animation: reveal 0.3s ease-in-out 1 reverse forwards;
-  display: block;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.overlay-base.animate-disappear * {
-  pointer-events: none;
-}
-
-@keyframes reveal {
-  from { opacity: 0 }
- to { opacity: 1 }
-}
-
-.animate-nodelay {
-  animation-delay: 0s;
-}
-
-.align-self-flex-start {
-  align-self: flex-start;
-}
-
-.align-self-flex-end {
-  align-self: flex-end;
-}
-
-.align-self-flex-center {
-  align-self: flex-center;
-}
-
-.valign-text-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.valign-text-bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-input:focus {
-  outline: none;
-}
-
-.listeners-active,
-.listeners-active * {
-  pointer-events: auto;
-}
-
-.hidden,
-.hidden * {
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.smart-layers-pointers,
-.smart-layers-pointers * {
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.listeners-active-click,
-.listeners-active-click * {
-  cursor: pointer;
-}
-
-* {
-  box-sizing: border-box;
-}
-:root { 
-  --black: #000000;
-  --onahau: #ccffff;
-  --purple-heart: #5b43e4;
- 
-  --font-size-l: 32px;
-  --font-size-m: 20px;
-  --font-size-xl: 40px;
- 
-  --font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
-}
-.bebasneuecyrillic-regular-normal-purple-heart-20px {
-  color: var(--purple-heart);
-  font-family: var(--font-family-bebas_neue_cyrillic-regular);
-  font-size: var(--font-size-m);
-  font-style: normal;
-  font-weight: 400;
-}
-
-:root {
-}
-
-
-.vector {
-  background-color: transparent;
-  position: absolute;
-}
-/* screen - frame-4 */
-
-.frame-4 {
-  background-color: var(--purple-heart);
-  height: 6592px;
-  overflow: hidden;
-  overflow-x: hidden;
-  position: relative;
-  width: 1366px;
-}
-
-.frame-4 .rectangle-1-UlqJXo {
-  background-color: transparent;
-  height: 6456px;
-  left: 0px;
-  position: absolute;
-  top: 46px;
-  width: 1366px;
-}
-
-.frame-4 .rectangle-2-UlqJXo {
-  background-color: transparent;
-  height: 6172px;
-  left: 72px;
-  position: absolute;
-  top: 233px;
-  width: 1219px;
-}
-
-.frame-4 .slide-16_9-2-1-UlqJXo {
-  background-color: transparent;
-  height: 577px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 384px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-4-1-UlqJXo {
-  background-color: transparent;
-  height: 579px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 989px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-5-1-UlqJXo {
-  background-color: transparent;
-  height: 578px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 1593px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-6-1-UlqJXo {
-  background-color: transparent;
-  height: 554px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 2218px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-7-1-UlqJXo {
-  background-color: transparent;
-  height: 578px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 2819px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-8-1-UlqJXo {
-  background-color: transparent;
-  height: 579px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 3487px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-9-1-UlqJXo {
-  background-color: transparent;
-  height: 579px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 4154px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-10-1-UlqJXo {
-  background-color: transparent;
-  height: 579px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 4823px;
-  width: 1029px;
-}
-
-.frame-4 .slide-16_9-11-1-UlqJXo {
-  background-color: transparent;
-  height: 577px;
-  left: 164px;
-  object-fit: cover;
-  position: absolute;
-  top: 5450px;
-  width: 1029px;
-}
-
-.frame-4 .rectangle-4-UlqJXo {
-  background-color: #ffffff;
-  border-radius: 30px;
-  height: 5891px;
-  left: 1279px;
-  position: absolute;
-  top: 375px;
-  width: 28px;
-}
-
-.frame-4 .rectangle-5-UlqJXo {
-  background-color: #5bc7ea;
-  border-radius: 30px;
-  height: 230px;
-  left: 1279px;
-  position: absolute;
-  top: 522px;
-  width: 28px;
-}
-
-.frame-4 .group-1-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 515px;
-  position: absolute;
-  top: 884px;
-  width: 327px;
-}
-
-.frame-4 .group-2-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 1487px;
-  width: 327px;
-}
-
-.frame-4 .group-3-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 2090px;
-  width: 327px;
-}
-
-.frame-4 .group-4-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 2687px;
-  width: 327px;
-}
-
-.frame-4 .group-5-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 3312px;
-  width: 327px;
-}
-
-.frame-4 .group-6-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 3981px;
-  width: 327px;
-}
-
-.frame-4 .group-7-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 515px;
-  position: absolute;
-  top: 4652px;
-  width: 327px;
-}
-
-.frame-4 .group-8-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 515px;
-  position: absolute;
-  top: 5321px;
-  width: 327px;
-}
-
-.frame-4 .group-9-UlqJXo {
-  background-color: transparent;
-  height: 66px;
-  left: 524px;
-  position: absolute;
-  top: 5933px;
-  width: 327px;
-}
-
-.frame-4 .group-11-UlqJXo {
-  background-color: transparent;
-  height: 105px;
-  left: 92px;
-  position: absolute;
-  top: 189px;
-  width: 142px;
-}
-
-.frame-4 .rectangle-6 {
-  background-color: var(--onahau);
-  border-radius: 15px;
-  height: 66px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 325px;
-}
-
-.frame-4 .text_label {
-  background-color: transparent;
-  height: 50px;
-  left: 6px;
-  letter-spacing: 0.00px;
-  line-height: 25px;
-  position: absolute;
-  text-align: center;
-  top: 13px;
-  width: 320px;
-}
-</style><script id="anime-js-script" src="./frame-4_files/anime.min.js.загрузка" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script><script id="imgloaded-js-script" src="./frame-4_files/imagesloaded.pkgd.min.js.загрузка"></script><style>/* Copyright (C) Microsoft Corporation. All rights reserved. */
-
-.msreadout-word-highlight:not(.msreadout-inactive-highlight) {
-    background: #ffff00 !important;
-    color: black !important;
-}
-
-.msreadout-line-highlight:not(.msreadout-inactive-highlight) {
-    background: #b2d6f3 !important;
-    color: black !important;
-}
-
-@media screen and (-ms-high-contrast: active) {
-    .msreadout-word-highlight:not(.msreadout-inactive-highlight) {
-        -ms-high-contrast-adjust: none;
-        background-color: Highlight !important;
-        color: HighlightText !important;
-    }
-
-    .msreadout-line-highlight:not(.msreadout-inactive-highlight) {
-        -ms-high-contrast-adjust: none;
-        background: yellow !important;
-        color: black !important;
-    }
-}
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uLy4uL2Nzcy9yZWFkX291dF9sb3VkX3dlYi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsOERBQThEOztBQUU5RDtJQUNJLDhCQUE4QjtJQUM5Qix1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSw4QkFBOEI7SUFDOUIsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0k7UUFDSSw4QkFBOEI7UUFDOUIsc0NBQXNDO1FBQ3RDLCtCQUErQjtJQUNuQzs7SUFFQTtRQUNJLDhCQUE4QjtRQUM5Qiw2QkFBNkI7UUFDN0IsdUJBQXVCO0lBQzNCO0FBQ0oiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBDb3B5cmlnaHQgKEMpIE1pY3Jvc29mdCBDb3Jwb3JhdGlvbi4gQWxsIHJpZ2h0cyByZXNlcnZlZC4gKi9cclxuXHJcbi5tc3JlYWRvdXQtd29yZC1oaWdobGlnaHQ6bm90KC5tc3JlYWRvdXQtaW5hY3RpdmUtaGlnaGxpZ2h0KSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZjAwICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcclxufVxyXG5cclxuLm1zcmVhZG91dC1saW5lLWhpZ2hsaWdodDpub3QoLm1zcmVhZG91dC1pbmFjdGl2ZS1oaWdobGlnaHQpIHtcclxuICAgIGJhY2tncm91bmQ6ICNiMmQ2ZjMgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAoLW1zLWhpZ2gtY29udHJhc3Q6IGFjdGl2ZSkge1xyXG4gICAgLm1zcmVhZG91dC13b3JkLWhpZ2hsaWdodDpub3QoLm1zcmVhZG91dC1pbmFjdGl2ZS1oaWdobGlnaHQpIHtcclxuICAgICAgICAtbXMtaGlnaC1jb250cmFzdC1hZGp1c3Q6IG5vbmU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogSGlnaGxpZ2h0ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgY29sb3I6IEhpZ2hsaWdodFRleHQgIWltcG9ydGFudDtcclxuICAgIH1cclxuXHJcbiAgICAubXNyZWFkb3V0LWxpbmUtaGlnaGxpZ2h0Om5vdCgubXNyZWFkb3V0LWluYWN0aXZlLWhpZ2hsaWdodCkge1xyXG4gICAgICAgIC1tcy1oaWdoLWNvbnRyYXN0LWFkanVzdDogbm9uZTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiB5ZWxsb3cgIWltcG9ydGFudDtcclxuICAgICAgICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcclxuICAgIH1cclxufSJdLCJzb3VyY2VSb290IjoiIn0= */</style></head><body style="margin: 0;background: #5b43e4;"><input type="hidden" id="anPageName" name="page" value="frame-4"><div class="container-center-horizontal"><div class="frame-4 screen " data-id="279:214"><img class="rectangle-1-UlqJXo" data-id="279:237" src="./frame-4_files/rectangle-1.svg" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/rectangle-1.svg" alt="Rectangle 1"><img class="rectangle-2-UlqJXo" data-id="279:238" src="./frame-4_files/rectangle-2.svg" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/rectangle-2.svg" alt="Rectangle 2"><img class="slide-16_9-2-1-UlqJXo" data-id="279:239" src="./frame-4_files/slide-16-9---2-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---2-1.png" alt="Slide 16_9 - 2 1"><img class="slide-16_9-4-1-UlqJXo" data-id="279:240" src="./frame-4_files/slide-16-9---4-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---4-1.png" alt="Slide 16_9 - 4 1"><img class="slide-16_9-5-1-UlqJXo" data-id="279:241" src="./frame-4_files/slide-16-9---5-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---5-1.png" alt="Slide 16_9 - 5 1"><img class="slide-16_9-6-1-UlqJXo" data-id="279:242" src="./frame-4_files/slide-16-9---6-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---6-1.png" alt="Slide 16_9 - 6 1"><img class="slide-16_9-7-1-UlqJXo" data-id="279:243" src="./frame-4_files/slide-16-9---7-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---7-1.png" alt="Slide 16_9 - 7 1"><img class="slide-16_9-8-1-UlqJXo" data-id="279:244" src="./frame-4_files/slide-16-9---8-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---8-1.png" alt="Slide 16_9 - 8 1"><img class="slide-16_9-9-1-UlqJXo" data-id="279:245" src="./frame-4_files/slide-16-9---9-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---9-1.png" alt="Slide 16_9 - 9 1"><img class="slide-16_9-10-1-UlqJXo" data-id="279:246" src="./frame-4_files/slide-16-9---10-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---10-1.png" alt="Slide 16_9 - 10 1"><img class="slide-16_9-11-1-UlqJXo" data-id="279:247" src="./frame-4_files/slide-16-9---11-1.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/slide-16-9---11-1.png" alt="Slide 16_9 - 11 1"><div class="rectangle-4-UlqJXo" data-id="279:248"></div><div class="rectangle-5-UlqJXo" data-id="279:249"></div><div class="group-1-UlqJXo" data-id="279:250"><div class="rectangle-6" data-id="279:251"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:252">Выбрать локацию</div></div><div class="group-2-UlqJXo" data-id="279:253"><div class="rectangle-6" data-id="279:254"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:255">Выбрать локацию</div></div><div class="group-3-UlqJXo" data-id="279:256"><div class="rectangle-6" data-id="279:257"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:258">Выбрать локацию</div></div><div class="group-4-UlqJXo" data-id="279:259"><div class="rectangle-6" data-id="279:260"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:261">Выбрать локацию</div></div><div class="group-5-UlqJXo" data-id="279:262"><div class="rectangle-6" data-id="279:263"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:264">Выбрать локацию</div></div><div class="group-6-UlqJXo" data-id="279:265"><div class="rectangle-6" data-id="279:266"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:267">Выбрать локацию</div></div><div class="group-7-UlqJXo" data-id="279:268"><div class="rectangle-6" data-id="279:269"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:270">Выбрать локацию</div></div><div class="group-8-UlqJXo" data-id="279:271"><div class="rectangle-6" data-id="279:272"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:273">Выбрать локацию</div></div><div class="group-9-UlqJXo" data-id="279:274"><div class="rectangle-6" data-id="279:275"></div><div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px" data-id="279:276">Выбрать локацию</div></div><img class="group-11-UlqJXo" data-id="279:277" src="./frame-4_files/group-11@2x.png" anima-src="https://cdn.animaapp.com/projects/65d760af2b6c6b373de0eb65/releases/65d761071b71400a3f861126/img/group-11@2x.png" alt="Group 11"></div></div><script src="./frame-4_files/launchpad-banner.js.загрузка" async=""></script><script defer="" src="./frame-4_files/restart-btn.min.js.загрузка"></script><div id="t_preload_links"></div></body></html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=1366, maximum-scale=1.0">
+		<style>
+		@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+		@font-face {
+			font-family: "Bebas Neue Cyrillic-Regular";
+			font-style: normal;
+			font-weight: 400;
+			src: url('https://anima-uploads.s3.amazonaws.com/projects/657c508f265283a56c3eeec3/fonts/bebasneue-regular.otf') format("opentype");
+		}
+		
+		.container-center-horizontal {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			pointer-events: none;
+			width: 100%;
+		}
+		
+		:root {
+			--black: #000000;
+			--onahau: #ccffff;
+			--purple-heart: #5b43e4;
+			--font-size-l: 32px;
+			--font-size-m: 20px;
+			--font-size-xl: 40px;
+			--font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
+		}
+		
+		.vector {
+			position: absolute;
+		}
+		
+		.frame-4 {
+			background-color: var(--purple-heart);
+			position: relative;
+			width: 1366px;
+		}
+		
+		.frame-4 .frame {
+			height: 5779px;
+			left: 47px;
+			position: absolute;
+			top: 73px;
+			width: 1219px;
+		}
+		
+		.frame-4 .location1 {
+			height: 577px;
+			left: 164px;
+			position: absolute;
+			top: 265px;
+		}
+		
+		.frame-4 .location-1-button {
+			height: 66px;
+			left: 515px;
+			position: absolute;
+			top: 764px;
+			width: 327px;
+		}
+		
+		.frame-4 .location2 {
+			height: 577px;
+			left: 164px;
+			position: absolute;
+			top: 867px;
+		}
+		
+		.frame-4 .location-2-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 1366px;
+			width: 327px;
+		}
+		
+		.frame-4 .location3 {
+			height: 577px;
+			left: 164px;
+			position: absolute;
+			top: 1469px;
+		}
+		
+		
+		.frame-4 .location-3-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 1968px;
+			width: 327px;
+		}
+		
+		.frame-4 .location4 {
+			height: 553px;
+			left: 164px;
+			position: absolute;
+			top: 2071px;
+		}
+		
+		.frame-4 .location-4-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 2546px;
+			width: 327px;
+		}
+		
+		.frame-4 .location5 {
+			height: 577px;
+			left: 164px;
+			position: absolute;
+			top: 2649px;
+		}
+		
+		.frame-4 .location-5-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 3148px;
+			width: 327px;
+		}
+		
+		.frame-4 .location6 {
+			height: 579px;
+			left: 164px;
+			position: absolute;
+			top: 3251px;
+		}
+		
+		.frame-4 .location-6-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 3750px;
+			width: 327px;
+		}
+		
+		.frame-4 .location7 {
+			height: 579px;
+			left: 164px;
+			position: absolute;
+			top: 3853px;
+		}
+		
+		.frame-4 .location-7-button {
+			height: 66px;
+			left: 515px;
+			position: absolute;
+			top: 4352px;
+			width: 327px;
+		}		
+		
+		.frame-4 .location8 {
+			height: 579px;
+			left: 164px;
+			position: absolute;
+			top: 4455px;
+		}
+		
+		.frame-4 .location-8-button {
+			height: 66px;
+			left: 515px;
+			position: absolute;
+			top: 4954px;
+			width: 327px;
+		}		
+		
+		.frame-4 .location9 {
+			height: 577px;
+			left: 164px;
+			position: absolute;
+			top: 5057px;
+		}
+		
+		.frame-4 .location-9-button {
+			height: 66px;
+			left: 524px;
+			position: absolute;
+			top: 5556px;
+			width: 327px;
+		}
+		
+		.frame-4 .title {
+			height: 105px;
+			left: 92px;
+			position: absolute;
+			top: 19px;
+			width: 142px;
+		}
+		
+		.frame-4 .button {
+			background-color: var(--onahau);
+			border-radius: 15px;
+			height: 66px;
+			width: 325px;
+			z-index:15;
+		}
+		
+		.frame-4 .text_label {
+			font-family: var(--font-family-bebas_neue_cyrillic-regular);
+			font-size: var(--font-size-m);
+			font-weight: 700;
+			line-height: 70px;
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body style="margin: 0;background: #5b43e4;">
+		<div class="container-center-horizontal">
+			<div class="frame-4">
+				<img class="title" src="location/title.png">
+				<img class="frame" src="location/frame.svg">
+				
+				<img class="location1" src="location/location1.png">
+				
+				<div class="location-1-button button" href="#">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+				</div>
+				
+				<img class="location2" src="location/location2.png">
+				<div class="location-2-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px"><a href="#">Выбрать локацию</a></div>
+					</a>
+				</div>
+				
+				<img class="location3" src="location/location3.png">
+				<div class="location-3-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location4" src="location/location4.png">
+				<div class="location-4-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location5" src="location/location5.png">
+				<div class="location-5-button button">	
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location6" src="location/location6.png">
+				<div class="location-6-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location7" src="location/location7.png">
+				<div class="location-7-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location8" src="location/location8.png">
+				<div class="location-8-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+				
+				<img class="location9" src="location/location9.png">
+				<div class="location-9-button button">
+					<a href="">
+						<div class="text_label valign-text-middle bebasneuecyrillic-regular-normal-purple-heart-20px">Выбрать локацию</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
