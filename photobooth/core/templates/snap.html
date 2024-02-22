@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=1366, maximum-scale=1.0">
+      <script type="text/javascript" src="{% static 'snap/webcam-easy.min.js' %}"></script>
+      <style>
+
+          @import url("{% static 'reset.min.css' %}");
+          
+          @font-face {
+            font-family: "Bebas Neue Cyrillic-Regular";
+            font-style: normal;
+            font-weight: 400;
+            src: url("{% static 'bebasneue-regular.otf' %}") format("opentype");
+          }
+          
+          .container-center-horizontal > * {
+            flex-shrink: 0;
+            pointer-events: auto;
+          }
+
+          :root { 
+            --black: #000000;
+            --onahau: #ccffff;
+            --purple-heart: #5b43e4;
+          
+            --font-size-l: 32px;
+            --font-size-m: 20px;
+            --font-size-xl: 40px;
+          
+            --font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
+          }
+          
+          .vector {
+            position: absolute;
+          }
+          
+          .frame-2 {
+            background-color: var(--purple-heart);
+            height: 768px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1366px;
+          }
+          
+          .frame-2 .background {
+            height: 768px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1366px;
+          }
+          
+          .frame-2 .frame {
+            height: 672px;
+            left: 202px;
+            position: absolute;
+            top: 36px;
+            width: 985px;
+          }
+
+          .frame-2 .title {
+            height: 50px;
+            left: 1232px;
+            top: 43px;
+          }
+
+          #photo {
+            width: 100%; 
+            height: 768px;
+          }
+
+          #webcam {
+            width: 100%; 
+            height: 768px;
+          }
+
+          .frame-2 .button-text {
+            color: var(--purple-heart);
+            font-family: var(--font-family-bebas_neue_cyrillic-regular);
+            font-size: var(--font-size-m);
+            font-weight: 700;
+            line-height: 40px;
+            text-align: center;
+          }
+
+          .frame-2 #button-snap {
+            background-color: var(--onahau);
+            border-radius: 15px;
+            height: 39px;
+            left: 589px;
+            position: absolute;
+            top: 730px;
+            width: 188px;
+          }
+
+          .frame-2 #button-resnap {
+            background-color: var(--onahau);
+            border-radius: 15px;
+            height: 39px;
+            left: 389px;
+            position: absolute;
+            top: 730px;
+            width: 188px;
+          }
+
+          .frame-2 #button-next {
+            background-color: var(--onahau);
+            border-radius: 15px;
+            height: 39px;
+            left: 789px;
+            position: absolute;
+            top: 730px;
+            width: 188px;
+          }
+
+      </style>
+  </head>
+  <body style="margin: 0;background: #5b43e4;">
+      <div class="container-center-horizontal">
+          <div class="frame-2 screen ">
+            <img id="photo"/>
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="canvas" class="d-none"></canvas>
+
+            <img class="background" src="{% static 'snap/background.svg' %}">
+            <img class="frame" src="{% static 'snap/frame.svg' %}">
+            <div hidden id="button-resnap" onclick="resnap()">
+              <h1 class="button-text">ПЕРЕСНЯТЬ</h1>
+            </div>
+            <div id="button-snap" onclick="snap()">
+              <h1 class="button-text">СДЕЛАТЬ ФОТО</h1>
+            </div>
+            <div hidden id="button-next" onclick="next">
+              <h1 class="button-text">ДАЛЕЕ</h1>
+            </div>
+            <img class="title vector" src="{% static 'title.png' %}">
+          </div>
+      </div>
+
+      <script>
+        const webcamElement = document.getElementById('webcam');
+        const canvasElement = document.getElementById('canvas');
+        const webcam = new Webcam(webcamElement, 'user', canvasElement);
+        let picture = null;
+        is_hidden = false;
+        webcam.start()
+        .then(result =>{
+          console.log("webcam started");
+        })
+        .catch(err => {
+          console.log(err);
+        })	;
+        
+        function snap() {
+          if (!is_hidden) {
+            picture = webcam.snap();
+            document.querySelector('#photo').setAttribute("src", picture);
+            document.querySelector('#button-snap').setAttribute("hidden", "hidden");
+            document.querySelector('#button-resnap').removeAttribute("hidden");
+            document.querySelector('#button-next').removeAttribute("hidden");
+            is_hidden = true;
+          }
+        }
+
+        function resnap() {
+          document.querySelector('#photo').removeAttribute("src");
+          document.querySelector('#button-snap').removeAttribute("hidden");
+          is_hidden = false;
+          document.querySelector('#button-resnap').setAttribute("hidden", "hidden");
+          document.querySelector('#button-next').setAttribute("hidden", "hidden");
+        }
+      </script>
+
+  </body>
+</html>

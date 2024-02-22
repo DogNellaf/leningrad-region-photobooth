@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1366, maximum-scale=1.0">
+		<meta name="og:type" content="website">
+		<style>
+		@import url("{% static 'reset.min.css' %}");
+		@font-face {
+			font-family: "Bebas Neue Cyrillic-Regular";
+			font-style: bold;
+			font-weight: 400;
+			src: url("{% static 'bebasneue-regular.otf' %}") format("opentype");
+		}
+		
+		.screen a {
+			display: contents;
+			text-decoration: none;
+		}
+
+		:root {
+			--black: #000000;
+			--onahau: #ccffff;
+			--purple-heart: #5b43e4;
+			--font-size-l: 30px;
+			--font-size-m: 20px;
+			--font-size-xl: 40px;
+			--font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
+		}
+		
+		.vector {
+			position: absolute;
+		}
+		
+		.frame-1 .index-slade-1 {
+			left: 762px;
+			position: absolute;
+			top: 85px;
+			width: 407px;
+		}
+		
+		.frame-1 .index-woman-1 {
+			left: 711px;
+			top: 29px;
+			width: 459px;
+		}
+		
+		.frame-1 .index-slade-2 {
+			left: 808px;
+			position: absolute;
+			top: 170px;
+			width: 427px;
+		}
+		
+		.frame-1 .index-woman-2 {
+			left: 822px;
+			top: 129px;
+			width: 474px;
+		}
+		
+		.frame-1 .index-slade-3 {
+			left: 796px;
+			position: absolute;
+			top: 335px;
+			width: 423px;
+		}
+		
+		.frame-1 .index-woman-3 {
+			left: 786px;
+			top: 322px;
+			width: 428px;
+		}
+		
+		.frame-1 .index-frame {
+			left: 700px;
+			position: absolute;
+			top: 38px;
+			width: 592px;
+		}
+		
+		.frame-1 .index-button {
+			background-color: var(--onahau);
+			border-radius: 15px;
+			height: 59px;
+			left: 503px;
+			position: absolute;
+			top: 666px;
+			width: 374px;
+		}
+		
+		.frame-1 .button-text {
+			color: var(--purple-heart);
+			font-family: var(--font-family-bebas_neue_cyrillic-regular);
+			font-size: var(--font-size-xl);
+			font-weight: 700;
+			line-height:60px;
+			text-align: center;
+		}
+		
+		.frame-1 .index-title {
+			left: 1180px;
+			position: absolute;
+			top: 61px;
+			width: 66px;
+		}
+		
+		.frame-1 .try {
+			left: 58px;
+			top: 412px;
+		}
+		
+		.frame-1 .trip {
+			left: 58px;
+			top: 347px;
+		}
+		
+		.frame-1 .area {
+			left: 57px;
+			top: 178px;
+		}
+		
+		.frame-1 .mask-group {
+			position: absolute;
+		}
+		</style>
+	</head>
+	<body style="margin: 0; background: #5b43e4;">
+		<div class="frame-1 screen">
+			<img class="index-title" src="{% static 'title.png' %}">
+			<img class="index-frame" src="{% static 'index/frame.svg' %}">
+			<img class="index-slade-1" src="{% static 'index/slide1.png' %}">
+			<img class="index-woman-1 mask-group" src="{% static 'index/woman1.png' %}">
+			<img class="index-slade-2" src="{% static 'index/slide2.png' %}">
+			<img class="index-woman-2 mask-group" src="{% static 'index/woman2.png' %}">
+			<img class="index-slade-3" src="{% static 'index/slide3.png' %}">
+			<img class="index-woman-3 mask-group" src="{% static 'index/woman3.png' %}">
+			<div class="index-button">
+				<a href="{% url 'snap' %}">
+					<h1 class="button-text">НАЧАТЬ ПУТЕШЕСТВИЕ</h1>
+				</a>
+			</div>
+			<img class="try vector" src="{% static 'index/try.svg' %}">
+			<img class="trip vector" src="{% static 'index/trip.svg' %}">
+			<img class="area vector" src="{% static 'index/area.svg' %}">
+		</div>
+	</body>
+</html>
