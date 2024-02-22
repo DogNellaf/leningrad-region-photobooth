@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--bo$@^j3o9g(21ck57dh!+7e9xf3ie*z-6x$)niqqozyi17b=_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,6 +83,7 @@ DATABASES = {
     }
 }
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY=None
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
