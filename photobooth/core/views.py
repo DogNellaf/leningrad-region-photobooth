@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from datetime import datetime as dt
 from photobooth.settings import STATICFILES_DIRS
+from django.views.decorators.csrf import csrf_exempt
 import os
 from PIL import Image
 
@@ -22,6 +23,7 @@ def editor(request, location_title):
 def result(request, photo_url):
     return render(request, "result.html", {'photo_url': os.path.join("images", photo_url)})
 
+@csrf_exempt
 def save_snap(request):
     if request.method == 'POST':
         image_name = request.POST.get['image_name']
@@ -34,6 +36,7 @@ def save_snap(request):
             return JsonResponse({'success': True, 'image_name': image_name})
         return JsonResponse({'success': False, 'image_name': None})
 
+@csrf_exempt
 def save_image(request):
     if request.method == 'POST':
         import re
