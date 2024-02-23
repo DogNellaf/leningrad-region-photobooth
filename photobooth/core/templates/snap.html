@@ -6,7 +6,6 @@
           <div class="snap screen ">
             <img id="photo"/>
             <video id="webcam" height="672px" width="985px" autoplay playsinline></video>
-            {% comment %} <canvas id="canvas" class="d-none"></canvas> {% endcomment %}
 
             <img class="background" src="{% static 'snap/background.png' %}">
             <img class="frame" src="{% static 'snap/frame.svg' %}">
@@ -27,8 +26,7 @@
 
       <script>
         const webcamElement = document.getElementById('webcam');
-        const canvasElement = document.getElementById('canvas');
-        const webcam = new Webcam(webcamElement, 'user', canvasElement);
+        const webcam = new Webcam(webcamElement, 'user');
         let picture = null;
         is_hidden = false;
         webcam.start()
