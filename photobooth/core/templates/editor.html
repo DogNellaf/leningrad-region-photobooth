@@ -55,7 +55,7 @@
                 }
             }).then(response => response.json()).then(result => {
                 image_name = result["image_name"];
-                window.location.replace("result/" + image_name);
+                window.location.replace("result/" + '{{snap_url}}/' + image_name);
             });
         }
     </script>

@@ -22,9 +22,9 @@ def editor(request, snap_url, location_title):
     snap_url = os.path.join("snaps", snap_url)
     return render(request, "editor.html", {'location_title': location_title, 'snap_url': snap_url})
 
-def result(request, photo_url):
+def result(request, photo_url, snap_url):
     photo_url = os.path.join("images", photo_url)
-    return render(request, "result.html", {'photo_url': photo_url})
+    return render(request, "result.html", {'photo_url': photo_url, 'snap_url': snap_url})
 
 @csrf_exempt
 def save_snap(request):
