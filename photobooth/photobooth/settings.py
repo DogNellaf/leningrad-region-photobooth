@@ -123,7 +123,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
-   '/home/host1869057.hostland.pro/htdocs/www/static'
+   '/home/host1869057/host1869057.hostland.pro/htdocs/www/static'
 ]
 
 # Default primary key field type
