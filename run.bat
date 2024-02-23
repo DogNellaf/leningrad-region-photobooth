@@ -4,5 +4,6 @@ IF NOT EXIST venv (
 )
 call venv\Scripts\activate.bat
 pip install -r requirements.txt
-python IDS.py
+cd photobooth
+python manage.py runserver
 pause

@@ -5,8 +5,9 @@ from photobooth.settings import STATICFILES_DIRS
 from django.views.decorators.csrf import csrf_exempt
 import os
 import base64
-from .rembg import remove_bg
+from rembg import remove
 
+STATIC_DIR = STATICFILES_DIRS[0]
 
 def index(request):
     return render(request, "index.html")
@@ -35,13 +36,20 @@ def save_snap(request):
 
         image_name = "snap-" + dt.now().strftime('%Y-%m-%d%H%I%S') + '.png'
 
-        path = os.path.join(STATICFILES_DIRS[1], 'snaps')
+        path = os.path.join(STATIC_DIR, 'snaps')
         path = os.path.join(path, image_name)
 
-        with open(path, 'wb') as f: 
-            f.write(data)
+        # with open(path, 'wb') as f: 
+        #     f.write(data)
 
-        remove_bg(path)
+        # input_path = 'input.png'
+        # output_path = 'output.png'
+
+        # with open(input_path, 'rb') as i:
+        with open(path, 'wb') as o:
+            # input = i.read()
+            output = remove(data)
+            o.write(output)
 
         return JsonResponse({'success': True, 'image_name': image_name})
     return JsonResponse({'success': False, 'image_name': None})
@@ -55,7 +63,7 @@ def save_image(request):
 
         image_name = dt.now().strftime('%Y-%m-%d%H%I%S') + '.png'
 
-        path = os.path.join(STATICFILES_DIRS[1], 'images')
+        path = os.path.join(STATIC_DIR, 'images')
         path = os.path.join(path, image_name)
 
         with open(path, "wb") as out:
