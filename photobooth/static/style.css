@@ -447,6 +447,14 @@
   width: 985px;
 }
 
+.snap .canvas-editor {
+    height: 672px;
+    left: 350px;
+    position: absolute;
+    top: 130px;
+    width: 985px;
+  }
+
 .snap .title {
   height: 50px;
   left: 1232px;

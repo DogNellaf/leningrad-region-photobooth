@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block content %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<div class="result screen ">
-		<img class="location" src="{% static 'result/location.png' %}">
+		<img class="location" src="{% static photo_url %}">
 		
-		<img class="vector-2-Ix1nMc" src="{% static 'result/vector-2-1.svg' %}">
-		
-		<img class="person" src="{% static 'result/person.png' %}">
 		<img class="background" src="{% static 'result/background.svg' %}">
 		<img class="frame" src="{% static 'result/frame.svg' %}">
 		<a href="{% url 'location' %}">
@@ -26,8 +24,20 @@
 		</a>
 		<p class="text-under-qr valign-text-middle text_label">Наведите камеру своего телефона
 		<br>и скачайте фото</p>
-		<img class="qr" src="{% static 'result/qr.png' %}">
+		<div id="qrcode" class="qr"></div>
 		<img class="title" src="{% static 'title.png' %}">
 	</div>
-</div>
+	<script>
+		let url = window.location.hostname + '{% static photo_url %}';
+		console.log(url);
+
+		new QRCode(document.getElementById("qrcode"), {
+			text: url, // Введите здесь текст или URL-адрес, который вы хотите закодировать в QR-код
+			width: 219, // Ширина QR-кода в пикселях
+			height: 210, // Высота QR-кода в пикселях
+			colorDark: "#000000", // Цвет кода
+			colorLight: "#ffffff", // Цвет фона
+			correctLevel: QRCode.CorrectLevel.H, // уровень исправления ошибок
+		});
+	</script>
 {% endblock content %}
