@@ -5,7 +5,6 @@ from photobooth.settings import STATICFILES_DIRS
 from django.views.decorators.csrf import csrf_exempt
 import os
 import base64
-from rembg import remove
 
 STATIC_DIR = STATICFILES_DIRS[0]
 
@@ -39,17 +38,34 @@ def save_snap(request):
         path = os.path.join(STATIC_DIR, 'snaps')
         path = os.path.join(path, image_name)
 
-        # with open(path, 'wb') as f: 
-        #     f.write(data)
+        with open(path, 'wb') as f: 
+            f.write(data)
 
-        # input_path = 'input.png'
-        # output_path = 'output.png'
+        # # input_path = 'input.png'
+        # # output_path = 'output.png'
+        # # Загрузка изображения
+        # image = cv2.imread(path)
+        # # Преобразование изображения в оттенки серого
+        # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-        # with open(input_path, 'rb') as i:
-        with open(path, 'wb') as o:
-            # input = i.read()
-            output = remove(data)
-            o.write(output)
+        # # Применение порогового преобразования для выделения объекта
+        # _, thresh = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY)
+
+        # # Нахождение контуров на пороговом изображении
+        # contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+        # # Создание маски для объекта
+        # mask = np.zeros_like(image)
+        # cv2.drawContours(mask, contours, -1, (255, 255, 255), thickness=cv2.FILLED)
+
+        # # Инвертирование маски
+        # mask_inv = cv2.bitwise_not(mask)
+
+        # # Применение маски к исходному изображению для удаления фона
+        # result = cv2.bitwise_and(image, image, mask=mask_inv)
+
+        # # Сохранение результата
+        # cv2.imwrite(path, result)
 
         return JsonResponse({'success': True, 'image_name': image_name})
     return JsonResponse({'success': False, 'image_name': None})
