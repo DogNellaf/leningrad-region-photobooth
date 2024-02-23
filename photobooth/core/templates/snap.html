@@ -17,11 +17,9 @@
             <div id="button-snap" onclick="snap()">
               <h1 class="button-text">СДЕЛАТЬ ФОТО</h1>
             </div>
-            <a href="{% url 'location' %}">
-              <div hidden id="button-next">
-                <h1 class="button-text">ДАЛЕЕ</h1>
-              </div>
-            </a>
+            <div hidden id="button-next" onclick="next()">
+              <h1 class="button-text">ДАЛЕЕ</h1>
+            </div>
             <img class="title vector" src="{% static 'title.png' %}">
           </div>
       </div>
@@ -30,6 +28,7 @@
         const webcamElement = document.getElementById('webcam');
         const canvasElement = document.getElementById('canvas');
         const webcam = new Webcam(webcamElement, 'user', canvasElement);
+        const photo = document.querySelector('#photo');
         let picture = null;
         is_hidden = false;
         webcam.start()
@@ -55,24 +54,11 @@
             if (secondsLeft < 0) {
               clearInterval(timer);
               picture = webcam.snap();
-              document.querySelector('#photo').setAttribute("src", picture);
+              photo.setAttribute("src", picture);
               document.querySelector('#button-snap').setAttribute("hidden", "hidden");
               webcamElement.setAttribute("hidden", "hidden");
               document.querySelector('#button-resnap').removeAttribute("hidden");
               document.querySelector('#button-next').removeAttribute("hidden");
-              let url = canvas.toDataURL({ format: 'png' }).replace("data:image/png;base64,", "");
-              let formUrl = "{% url 'save_snap' %}";
-              fetch(formUrl, {
-                  method: 'POST',
-                  body: picture.replace('data:image/png;base64,',''),
-                  headers: {
-                      'Content-Type': 'application/json',
-                      'X-CSRFToken': '{{ csrf_token  }}'
-                  }
-              }).then(response => response.json()).then(result => {
-                  image_name = result["image_name"];
-                  window.location.replace("location/" + image_name);
-              });
             }
           }, 1000);
         }
@@ -84,12 +70,27 @@
 
         function resnap() {
           clearTimer();
-          document.querySelector('#photo').removeAttribute("src");
+          photo.removeAttribute("src");
           document.querySelector('#button-snap').removeAttribute("hidden");
           webcamElement.removeAttribute("hidden");
           is_hidden = false;
           document.querySelector('#button-resnap').setAttribute("hidden", "hidden");
           document.querySelector('#button-next').setAttribute("hidden", "hidden");
+        }
+
+        function next() {
+          let formUrl = "{% url 'save_snap' %}";
+          fetch(formUrl, {
+              method: 'POST',
+              body: photo.src.replace('data:image/png;base64,',''),
+              headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRFToken': '{{ csrf_token  }}'
+              }
+          }).then(response => response.json()).then(result => {
+              image_name = result["image_name"];
+              window.location.replace("location/" + image_name);
+          });
         }
       </script>
       {% endblock content %}
