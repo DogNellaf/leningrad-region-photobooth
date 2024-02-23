@@ -44,6 +44,7 @@
             picture = webcam.snap();
             document.querySelector('#photo').setAttribute("src", picture);
             document.querySelector('#button-snap').setAttribute("hidden", "hidden");
+            webcamElement.setAttribute("hidden", "hidden");
             document.querySelector('#button-resnap').removeAttribute("hidden");
             document.querySelector('#button-next').removeAttribute("hidden");
             is_hidden = true;
@@ -53,6 +54,7 @@
         function resnap() {
           document.querySelector('#photo').removeAttribute("src");
           document.querySelector('#button-snap').removeAttribute("hidden");
+          webcamElement.removeAttribute("hidden");
           is_hidden = false;
           document.querySelector('#button-resnap').setAttribute("hidden", "hidden");
           document.querySelector('#button-next').setAttribute("hidden", "hidden");
