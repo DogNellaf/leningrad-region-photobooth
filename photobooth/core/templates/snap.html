@@ -3,6 +3,7 @@
 
 {% block content %}
 <script crossorigin type="text/javascript" src="{% static 'snap/webcam-easy.min.js' %}"></script>
+        <div class="frame" id="timer-display"></div>
           <div class="snap screen ">
             <img id="photo"/>
             <video id="webcam" height="672px" width="985px" autoplay playsinline></video>
@@ -41,17 +42,36 @@
         
         function snap() {
           if (!is_hidden) {
-            picture = webcam.snap();
-            document.querySelector('#photo').setAttribute("src", picture);
-            document.querySelector('#button-snap').setAttribute("hidden", "hidden");
-            webcamElement.setAttribute("hidden", "hidden");
-            document.querySelector('#button-resnap').removeAttribute("hidden");
-            document.querySelector('#button-next').removeAttribute("hidden");
+            startTimer();
+            
             is_hidden = true;
           }
         }
 
+        function startTimer() {
+          let secondsLeft = 5;
+          timer = setInterval(() => {
+            document.getElementById('timer-display').textContent = secondsLeft;
+            secondsLeft--;
+            if (secondsLeft < 0) {
+              clearInterval(timer);
+              picture = webcam.snap();
+              document.querySelector('#photo').setAttribute("src", picture);
+              document.querySelector('#button-snap').setAttribute("hidden", "hidden");
+              webcamElement.setAttribute("hidden", "hidden");
+              document.querySelector('#button-resnap').removeAttribute("hidden");
+              document.querySelector('#button-next').removeAttribute("hidden");
+            }
+          }, 1000);
+        }
+
+        function clearTimer() {
+          clearInterval(timer);
+          document.getElementById('timer-display').textContent = ''; // Очистка надписи
+        }
+
         function resnap() {
+          clearTimer();
           document.querySelector('#photo').removeAttribute("src");
           document.querySelector('#button-snap').removeAttribute("hidden");
           webcamElement.removeAttribute("hidden");
