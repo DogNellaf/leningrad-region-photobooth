@@ -3,7 +3,6 @@ from django.http import JsonResponse
 from datetime import datetime as dt
 from photobooth.settings import STATICFILES_DIRS
 import os
-from rembg import remove
 from PIL import Image
 
 
@@ -30,8 +29,8 @@ def save_snap(request):
             path = os.path.join(STATICFILES_DIRS[0], 'snaps')
             path = os.path.join(path, image_name)
             
-            output = remove(Image.open(path))
-            output.save(path)
+            #output = remove(Image.open(path))
+            #output.save(path)
             return JsonResponse({'success': True, 'image_name': image_name})
         return JsonResponse({'success': False, 'image_name': None})
 
