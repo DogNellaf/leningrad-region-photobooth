@@ -5,6 +5,7 @@ from photobooth.settings import STATICFILES_DIRS
 from django.views.decorators.csrf import csrf_exempt
 import os
 from PIL import Image
+import base64
 
 
 def index(request):
@@ -26,22 +27,24 @@ def result(request, photo_url):
 @csrf_exempt
 def save_snap(request):
     if request.method == 'POST':
-        image_name = request.POST.get['image_name']
-        if image_name:
-            path = os.path.join(STATICFILES_DIRS[1], 'snaps')
-            path = os.path.join(path, image_name)
-            
-            #output = remove(Image.open(path))
-            #output.save(path)
-            return JsonResponse({'success': True, 'image_name': image_name})
-        return JsonResponse({'success': False, 'image_name': None})
+        image_raw = request.body
+
+        data = base64.b64decode(image_raw)
+
+        image_name = "snap-" + dt.now().strftime('%Y-%m-%d%H%I%S') + '.png'
+
+        path = os.path.join(STATICFILES_DIRS[1], 'snaps')
+        path = os.path.join(path, image_name)
+
+        with open(path, "wb") as out:
+            out.write(data)
+
+        return JsonResponse({'success': True, 'image_name': image_name})
+    return JsonResponse({'success': False, 'image_name': None})
 
 @csrf_exempt
 def save_image(request):
     if request.method == 'POST':
-        import re
-        import base64
-
         image_raw = request.body
 
         data = base64.b64decode(image_raw)

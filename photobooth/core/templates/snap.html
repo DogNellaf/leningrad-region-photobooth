@@ -43,7 +43,6 @@
         function snap() {
           if (!is_hidden) {
             startTimer();
-            
             is_hidden = true;
           }
         }
@@ -61,6 +60,19 @@
               webcamElement.setAttribute("hidden", "hidden");
               document.querySelector('#button-resnap').removeAttribute("hidden");
               document.querySelector('#button-next').removeAttribute("hidden");
+              let url = canvas.toDataURL({ format: 'png' }).replace("data:image/png;base64,", "");
+              let formUrl = "{% url 'save_snap' %}";
+              fetch(formUrl, {
+                  method: 'POST',
+                  body: picture.replace('data:image/png;base64,',''),
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRFToken': '{{ csrf_token  }}'
+                  }
+              }).then(response => response.json()).then(result => {
+                  image_name = result["image_name"];
+                  window.location.replace("location/" + image_name);
+              });
             }
           }, 1000);
         }
