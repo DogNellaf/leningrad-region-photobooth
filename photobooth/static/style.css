@@ -477,12 +477,13 @@
 
 #timer-display {
     position: absolute;
-    font-size: 80px;
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: 60px;
     text-align: center;
     color: white;
     z-index: 2;
     height: 50px;
-    left: 1240px;
+    left: 1250px;
     top: 90px;
 }
 
