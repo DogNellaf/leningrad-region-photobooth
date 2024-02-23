@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 from PIL import Image
 import base64
+import requests
+from rembg import remove
 
 
 def index(request):
@@ -38,8 +40,12 @@ def save_snap(request):
         path = os.path.join(STATICFILES_DIRS[1], 'snaps')
         path = os.path.join(path, image_name)
 
-        with open(path, "wb") as out:
-            out.write(data)
+        with open(path, 'wb') as f: 
+            f.write(data)
+
+        input = Image.open(path)
+        output = remove(input)
+        output.save(path)
 
         return JsonResponse({'success': True, 'image_name': image_name})
     return JsonResponse({'success': False, 'image_name': None})
