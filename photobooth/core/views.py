@@ -4,10 +4,8 @@ from datetime import datetime as dt
 from photobooth.settings import STATICFILES_DIRS
 from django.views.decorators.csrf import csrf_exempt
 import os
-from PIL import Image
 import base64
-import requests
-from rembg import remove
+from .rembg import remove_bg
 
 
 def index(request):
@@ -43,9 +41,7 @@ def save_snap(request):
         with open(path, 'wb') as f: 
             f.write(data)
 
-        input = Image.open(path)
-        output = remove(input)
-        output.save(path)
+        remove_bg(path)
 
         return JsonResponse({'success': True, 'image_name': image_name})
     return JsonResponse({'success': False, 'image_name': None})
