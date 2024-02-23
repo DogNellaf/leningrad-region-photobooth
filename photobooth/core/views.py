@@ -19,7 +19,7 @@ def location(request, snap_url):
 
 def editor(request, snap_url, location_title):
     location_title = os.path.join("location", location_title)
-    photo_url = os.path.join("snaps", photo_url)
+    snap_url = os.path.join("snaps", snap_url)
     return render(request, "editor.html", {'location_title': location_title, 'snap_url': snap_url})
 
 def result(request, photo_url):
