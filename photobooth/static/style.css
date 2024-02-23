@@ -1,0 +1,503 @@
+
+@import url('/static/reset.min.css');
+@font-face {
+    font-family: "Bebas Neue Cyrillic-Regular";
+    font-style: bold;
+    font-weight: 400;
+    src: url('/static/bebasneue-regular.otf') format("opentype");
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+:root {
+    --black: #000000;
+    --onahau: #ccffff;
+    --purple-heart: #5b43e4;
+    --font-size-l: 30px;
+    --font-size-m: 20px;
+    --font-size-xl: 40px;
+    --font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
+}
+
+.vector {
+    position: absolute;
+}
+
+.container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.index .slade-1 {
+    left: 762px;
+    position: absolute;
+    top: 85px;
+    width: 407px;
+}
+
+.index .woman-1 {
+    left: 711px;
+    top: 29px;
+    width: 459px;
+}
+
+.index .slade-2 {
+    left: 808px;
+    position: absolute;
+    top: 170px;
+    width: 427px;
+}
+
+.index .woman-2 {
+    left: 822px;
+    top: 129px;
+    width: 474px;
+}
+
+.index .slade-3 {
+    left: 796px;
+    position: absolute;
+    top: 335px;
+    width: 423px;
+}
+
+.index .woman-3 {
+    left: 786px;
+    top: 322px;
+    width: 428px;
+}
+
+.index .frame {
+    left: 700px;
+    position: absolute;
+    top: 38px;
+    width: 592px;
+}
+
+.index .button {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 59px;
+    left: 503px;
+    position: absolute;
+    top: 666px;
+    width: 374px;
+}
+
+.index .button-text {
+    color: var(--purple-heart);
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height:60px;
+    text-align: center;
+}
+
+.index .title {
+    left: 1180px;
+    position: absolute;
+    top: 61px;
+    width: 66px;
+}
+
+.index .try {
+    left: 58px;
+    top: 412px;
+}
+
+.index .trip {
+    left: 58px;
+    top: 347px;
+}
+
+.index .area {
+    left: 57px;
+    top: 178px;
+}
+
+.index .mask-group {
+    position: absolute;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.location {
+    background-color: var(--purple-heart);
+    position: relative;
+}
+
+.location .frame {
+    height: 5779px;
+    left: 47px;
+    position: absolute;
+    top: 73px;
+    width: 1219px;
+}
+
+.location .location1 {
+    height: 577px;
+    left: 164px;
+    position: absolute;
+    top: 265px;
+}
+
+.location .location-1-button {
+    height: 66px;
+    left: 515px;
+    position: absolute;
+    top: 764px;
+    width: 327px;
+}
+
+.location .location2 {
+    height: 577px;
+    left: 164px;
+    position: absolute;
+    top: 867px;
+}
+
+.location .location-2-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 1366px;
+    width: 327px;
+}
+
+.location .location3 {
+    height: 577px;
+    left: 164px;
+    position: absolute;
+    top: 1469px;
+}
+
+
+.location .location-3-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 1968px;
+    width: 327px;
+}
+
+.location .location4 {
+    height: 553px;
+    left: 164px;
+    position: absolute;
+    top: 2071px;
+}
+
+.location .location-4-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 2546px;
+    width: 327px;
+}
+
+.location .location5 {
+    height: 577px;
+    left: 164px;
+    position: absolute;
+    top: 2649px;
+}
+
+.location .location-5-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 3148px;
+    width: 327px;
+}
+
+.location .location6 {
+    height: 579px;
+    left: 164px;
+    position: absolute;
+    top: 3251px;
+}
+
+.location .location-6-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 3750px;
+    width: 327px;
+}
+
+.location .location7 {
+    height: 579px;
+    left: 164px;
+    position: absolute;
+    top: 3853px;
+}
+
+.location .location-7-button {
+    height: 66px;
+    left: 515px;
+    position: absolute;
+    top: 4352px;
+    width: 327px;
+}		
+
+.location .location8 {
+    height: 579px;
+    left: 164px;
+    position: absolute;
+    top: 4455px;
+}
+
+.location .location-8-button {
+    height: 66px;
+    left: 515px;
+    position: absolute;
+    top: 4954px;
+    width: 327px;
+}		
+
+.location .location9 {
+    height: 577px;
+    left: 164px;
+    position: absolute;
+    top: 5057px;
+}
+
+.location .location-9-button {
+    height: 66px;
+    left: 524px;
+    position: absolute;
+    top: 5556px;
+    width: 327px;
+}
+
+.location .title {
+    height: 105px;
+    left: 92px;
+    position: absolute;
+    top: 19px;
+    width: 142px;
+}
+
+.location .button {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 66px;
+    width: 325px;
+    z-index:15;
+}
+
+.location .text_label {
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    line-height: 70px;
+    text-align: center;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result {
+    background-color: var(--purple-heart);
+    height: 568px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.result .location {
+    height: 390px;
+    left: 555px;
+    object-fit: cover;
+    position: absolute;
+    top: 58px;
+    width: 694px;
+}
+
+.result .vector-2-Ix1nMc {
+    height: 273px;
+    left: 919px;
+    position: absolute;
+    top: 165px;
+    width: 112px;
+}
+
+.result .person {
+    height: 462px;
+    left: 837px;
+    object-fit: cover;
+    position: absolute;
+    top: 117px;
+    width: 309px;
+}
+
+.result .background {
+    height: 768px;
+    left: 173px;
+    position: absolute;
+    width: 1143px;
+    top: -90px;
+}
+
+.result .frame {
+    height: 364px;
+    left: 578px;
+    position: absolute;
+    top: 97px;
+    width: 669px;
+}
+
+.result .button-back {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 50px;
+    left: 614px;
+    position: absolute;
+    top: 504px;
+    width: 244px;
+}
+
+.result .button-index{
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 50px;
+    left: 980px;
+    position: absolute;
+    top: 504px;
+    width: 244px;
+}
+
+.result .qr {
+    height: 210px;
+    left: 139px;
+    object-fit: cover;
+    position: absolute;
+    top: 167px;
+    width: 210px;
+}
+
+.result .text-under-qr {
+    color: #ffffff;
+    height: 56px;
+    left: 16px;
+    top: 418px;
+    width: 467px;
+}
+
+.result .title {
+    height: 70px;
+    right: 35px;
+    position: absolute;
+    top: 15px;
+    width: 91px;
+}
+
+.result .button-text {
+    font-color: var(--onahau);
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+}
+
+.result .text_label {
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+}
+
+.snap {
+  background-color: var(--purple-heart);
+  height: 768px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+
+.snap .background {
+  height: 768px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.snap .frame {
+  height: 672px;
+  left: 202px;
+  position: absolute;
+  top: 36px;
+  width: 985px;
+}
+
+.snap .title {
+  height: 50px;
+  left: 1232px;
+  top: 43px;
+}
+
+#photo {
+  width: 100%; 
+  height: 768px;
+}
+
+#webcam {
+  width: 100%; 
+  height: 768px;
+}
+
+.snap .button-text {
+  color: var(--purple-heart);
+  font-family: var(--font-family-bebas_neue_cyrillic-regular);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+}
+
+.snap #button-snap {
+  background-color: var(--onahau);
+  border-radius: 15px;
+  height: 39px;
+  left: 589px;
+  position: absolute;
+  top: 730px;
+  width: 188px;
+}
+
+.snap #button-resnap {
+  background-color: var(--onahau);
+  border-radius: 15px;
+  height: 39px;
+  left: 389px;
+  position: absolute;
+  top: 730px;
+  width: 188px;
+}
+
+.snap #button-next {
+  background-color: var(--onahau);
+  border-radius: 15px;
+  height: 39px;
+  left: 789px;
+  position: absolute;
+  top: 730px;
+  width: 188px;
+}
