@@ -28,7 +28,7 @@ def save_snap(request):
     if request.method == 'POST':
         image_name = request.POST.get['image_name']
         if image_name:
-            path = os.path.join(STATICFILES_DIRS[0], 'snaps')
+            path = os.path.join(STATICFILES_DIRS[1], 'snaps')
             path = os.path.join(path, image_name)
             
             #output = remove(Image.open(path))
@@ -48,7 +48,7 @@ def save_image(request):
 
         image_name = dt.now().strftime('%Y-%m-%d%H%I%S') + '.png'
 
-        path = os.path.join(STATICFILES_DIRS[0], 'images')
+        path = os.path.join(STATICFILES_DIRS[1], 'images')
         path = os.path.join(path, image_name)
 
         with open(path, "wb") as out:
