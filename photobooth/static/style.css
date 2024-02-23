@@ -475,6 +475,14 @@
     width: 985px;
 }
 
+#canvas {
+    height: 672px;
+    left: 202px;
+    position: absolute;
+    top: 36px;
+    width: 985px;
+}
+
 .snap .button-text {
   color: var(--purple-heart);
   font-family: var(--font-family-bebas_neue_cyrillic-regular);
