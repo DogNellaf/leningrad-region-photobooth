@@ -28,7 +28,7 @@
             canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas));
         });
         
-        fabric.Image.fromURL('{% static 'result/vector-2-1.svg' %}', function(img) {
+        fabric.Image.fromURL('{% static snap_url %}', function(img) {
             img.set({
                 left: 500,
                 top: 250,

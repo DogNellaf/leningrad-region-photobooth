@@ -14,12 +14,12 @@ def index(request):
 def snap(request):
     return render(request, "snap.html")
 
-def location(request):
-    return render(request, "location.html")
+def location(request, snap_url):
+    return render(request, "location.html", {'snap_url': os.path.join("snaps", snap_url)})
 
-def editor(request, location_title):
+def editor(request, snap_url, location_title):
     location_title = 'location/' + location_title
-    return render(request, "editor.html", {'location_title': location_title})
+    return render(request, "editor.html", {'location_title': location_title, 'snap_url': snap_url})
 
 def result(request, photo_url):
     return render(request, "result.html", {'photo_url': os.path.join("images", photo_url)})
