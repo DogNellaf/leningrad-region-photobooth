@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+	<script src="{% static 'result/keyboard.js' %}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<div class="result screen ">
 		<img class="location" src="{% static photo_url %}">
@@ -28,8 +29,8 @@
 		<img class="title" src="{% static 'title.png' %}">
 		<form method="post" action="{% url 'send_email' %}"> 
 			{% csrf_token %}
-			<input class="input-email" type="email" name="email" placeholder="Email"/>
-			<input class="button-email" type="submit" value="Отправить"/> 
+			<input class="use-keyboard-input input-email" type="email" name="email" placeholder="Email"/>
+			<input class="button-email " type="submit" value="Отправить"/> 
 		</form>
 	</div>
 	<script>
