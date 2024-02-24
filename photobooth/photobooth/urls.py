@@ -8,5 +8,6 @@ urlpatterns = [
     path('result/<str:snap_url>/<str:photo_url>', views.result, name='result'),
     path('editor/<str:snap_url>/<str:location_title>', views.editor, name='editor'),
     path('save_image', views.save_image, name='save_image'),
-    path('save_snap', views.save_snap, name='save_snap')
+    path('save_snap', views.save_snap, name='save_snap'),
+    path('send_email', views.send_email, name='send_email')
 ]

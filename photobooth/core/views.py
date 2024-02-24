@@ -3,10 +3,13 @@ from django.http import JsonResponse
 from datetime import datetime as dt
 from photobooth.settings import STATICFILES_DIRS
 from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
 import os
 import base64
+from rembg import remove
+from PIL import Image
 
-STATIC_DIR = STATICFILES_DIRS[1]
+STATIC_DIR = STATICFILES_DIRS[0]
 
 def index(request):
     return render(request, "index.html")
@@ -27,6 +30,18 @@ def result(request, photo_url, snap_url):
     return render(request, "result.html", {'photo_url': photo_url, 'snap_url': snap_url})
 
 @csrf_exempt
+def send_email(request):
+    email = request.POST['email']
+    send_mail(
+        "Subject here",
+        "Here is the message.",
+        "from@example.com",
+        [email],
+        fail_silently=False,
+    )
+    pass
+
+@csrf_exempt
 def save_snap(request):
     if request.method == 'POST':
         image_raw = request.body
@@ -38,8 +53,15 @@ def save_snap(request):
         path = os.path.join(STATIC_DIR, 'snaps')
         path = os.path.join(path, image_name)
 
+        # with open(path, 'wb') as f: 
+        #     f.write(data)
+
+        # input = Image.open(path)
+        output = remove(data)
+        # os.remove(path)
+        # output.save(path)
         with open(path, 'wb') as f: 
-            f.write(data)
+            f.write(output)
 
         return JsonResponse({'success': True, 'image_name': image_name})
     return JsonResponse({'success': False, 'image_name': None})

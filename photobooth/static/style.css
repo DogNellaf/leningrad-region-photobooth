@@ -136,148 +136,133 @@
 }
 
 .location .frame {
-    height: 5779px;
+    height: 5134px;
     left: 47px;
     position: absolute;
     top: 73px;
-    width: 1219px;
+    width: 1519px;
 }
 
 .location .location1 {
-    height: 577px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
     top: 265px;
 }
 
 .location .location-1-button {
     height: 66px;
-    left: 515px;
+    left: 650px;
     position: absolute;
-    top: 764px;
+    top: 684px;
     width: 327px;
 }
 
 .location .location2 {
-    height: 577px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 867px;
+    top: 790px;
 }
 
 .location .location-2-button {
     height: 66px;
-    left: 524px;
+    left: 650px;
     position: absolute;
-    top: 1366px;
+    top: 1209px;
     width: 327px;
 }
 
 .location .location3 {
-    height: 577px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 1469px;
+    top: 1315px;
 }
 
 
 .location .location-3-button {
     height: 66px;
-    left: 524px;
+    left: 650px;
     position: absolute;
-    top: 1968px;
+    top: 1734px;
     width: 327px;
 }
 
 .location .location4 {
-    height: 553px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 2071px;
+    top: 1840px;
 }
 
 .location .location-4-button {
     height: 66px;
-    left: 524px;
+    left: 650px;
     position: absolute;
-    top: 2546px;
+    top: 2259px;
     width: 327px;
 }
 
 .location .location5 {
-    height: 577px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 2649px;
+    top: 2365px;
 }
 
 .location .location-5-button {
     height: 66px;
-    left: 524px;
+    left: 650px;
     position: absolute;
-    top: 3148px;
+    top: 2784px;
     width: 327px;
 }
 
 .location .location6 {
-    height: 579px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 3251px;
+    top: 2890px;
 }
 
 .location .location-6-button {
     height: 66px;
-    left: 524px;
+    left: 650px;
     position: absolute;
-    top: 3750px;
+    top: 3309px;
     width: 327px;
 }
 
 .location .location7 {
-    height: 579px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 3853px;
+    top: 3415px;
 }
 
 .location .location-7-button {
     height: 66px;
-    left: 515px;
+    left: 650px;
     position: absolute;
-    top: 4352px;
+    top: 3834px;
     width: 327px;
 }		
 
 .location .location8 {
-    height: 579px;
-    left: 164px;
+    height: 500px;
+    left: 370px;
     position: absolute;
-    top: 4455px;
+    top: 3940px;
 }
 
 .location .location-8-button {
     height: 66px;
-    left: 515px;
+    left: 650px;
     position: absolute;
-    top: 4954px;
+    top: 4359px;
     width: 327px;
 }		
-
-.location .location9 {
-    height: 577px;
-    left: 164px;
-    position: absolute;
-    top: 5057px;
-}
-
-.location .location-9-button {
-    height: 66px;
-    left: 524px;
-    position: absolute;
-    top: 5556px;
-    width: 327px;
-}
 
 .location .title {
     height: 105px;
@@ -295,7 +280,8 @@
     z-index:15;
 }
 
-.location .text_label {
+.location .button-text {
+    color: var(--purple-heart);
     font-family: var(--font-family-bebas_neue_cyrillic-regular);
     font-size: var(--font-size-m);
     font-weight: 700;
@@ -369,7 +355,7 @@
     width: 244px;
 }
 
-.result .button-index{
+.result .button-index {
     background-color: var(--onahau);
     border-radius: 15px;
     height: 50px;
@@ -379,12 +365,40 @@
     width: 244px;
 }
 
+.result .button-email {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    border: none; 
+    height: 50px;
+    left: 260px;
+    position: absolute;
+    top: 504px;
+    width: 165px;
+    color: #551a8b;
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+}
+
+.result .input-email {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    border: none; 
+    height: 50px;
+    left: 70px;
+    position: absolute;
+    top: 504px;
+    width: 165px;
+}
+
 .result .qr {
     height: 210px;
     left: 139px;
     object-fit: cover;
     position: absolute;
-    top: 167px;
+    top: 137px;
     width: 210px;
 }
 
@@ -392,7 +406,7 @@
     color: #ffffff;
     height: 56px;
     left: 16px;
-    top: 418px;
+    top: 388px;
     width: 467px;
 }
 
@@ -409,7 +423,7 @@
     font-family: var(--font-family-bebas_neue_cyrillic-regular);
     font-size: var(--font-size-l);
     font-weight: 700;
-    line-height: 60px;
+    line-height: 50px;
     text-align: center;
 }
 
