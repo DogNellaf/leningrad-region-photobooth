@@ -1,13 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from datetime import datetime as dt
-from photobooth.settings import STATICFILES_DIRS
+from datetime import datetime as dt, timedelta as td, timezone as tz
+import photobooth.settings as settings
+from photobooth.settings import STATICFILES_DIRS, EMAIL_HOST_USER
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives, send_mail
+from email.mime.image import MIMEImage
 import os
 import base64
 from rembg import remove
-from PIL import Image
 
 STATIC_DIR = STATICFILES_DIRS[0]
 
@@ -32,14 +33,54 @@ def result(request, photo_url, snap_url):
 @csrf_exempt
 def send_email(request):
     email = request.POST['email']
-    send_mail(
-        "Subject here",
-        "Here is the message.",
-        "from@example.com",
-        [email],
-        fail_silently=False,
+    # me = 'Название компании <{}>'.format(settings.EMAIL_HOST_USER)
+    subject = 'Ваше фото'
+
+    # attachments = {
+    #     'photo.jpg': os.join(settings.MEDIA_ROOT, 'test_attachment.pdf')
+    # }
+
+    # now = tz.now()
+    # delta_sec = -70 
+
+    # scheduled_time = now + td(seconds=delta_sec)
+
+    # send_mail(
+    #    subject,
+    #     "Here is the message.",
+    #     settings.EMAIL_HOST_USER,
+    #     [email],
+    #     fail_silently=False,
+    # )
+
+    # headers = {'To': f'Получатель письма от компании <{email}>'}
+    # send_mail(email, me, subject=subject,
+    #         message="Ваше фото", html_message="Ваше фото",
+    #         scheduled_time=scheduled_time, headers=headers, attachments=attachments)
+
+    
+    photo_name = request.POST['photo_url']
+    photo_url = os.path.join(STATIC_DIR, photo_name)
+
+    snap_name = request.POST['snap_url']
+    snap_url = os.path.join(STATIC_DIR, 'images')
+    snap_url = os.path.join(snap_url, snap_name) 
+
+    msg = EmailMultiAlternatives(
+        "Фото с сайта путешествиеполенобласти.рф",
+        "Ваше фото",
+        EMAIL_HOST_USER,
+        [email]
     )
-    pass
+    msg.mixed_subtype = 'related'
+    msg.attach_alternative("", "text/html")
+    with open(photo_url, 'rb') as f:
+        img = MIMEImage(f.read())
+        img.add_header('Content-ID', '<{name}>'.format(name=photo_name))
+        img.add_header('Content-Disposition', 'inline', filename=photo_name)
+    msg.attach(img)
+    msg.send()
+    return redirect(result, photo_url=photo_name.split('/')[-1].split('\\')[-1], snap_url=snap_name)
 
 @csrf_exempt
 def save_snap(request):
