@@ -1,10 +1,10 @@
 
-@import url('/static/reset.min.css');
+@import url('./reset.min.css');
 @font-face {
     font-family: "Bebas Neue Cyrillic-Regular";
     font-style: bold;
     font-weight: 400;
-    src: url('/static/bebasneue-regular.otf') format("opentype");
+    src: url('./bebasneue-regular.otf') format("opentype");
 }
 
 @font-face {
@@ -155,24 +155,38 @@
 .location {
     background-color: var(--purple-heart);
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .location .frame {
-    height: 5134px;
-    left: 47px;
     position: absolute;
-    top: 73px;
-    width: 1519px;
+    height: 6275px;
+    width: 1241px;
+    left: 59px;
+    top: 258px;
+    overflow-y: scroll;
+    background: no-repeat;
+    background-image: url(./location/frame.svg);
 }
 
-.location .location1 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 265px;
+.location .locations-div {
+    margin-top: 140px !important;
 }
 
-.location .location-1-button {
+.location .locations-div .first {
+    background-image: url(./location/location1.jpeg);
+}
+
+.location .locations-div div {
+    position: block;
+    height: 577px;
+    width: 1029px;
+    margin-top: 25px;
+    margin-left: 105px;
+}
+
+.location .locations-div div button {
     height: 66px;
     left: 650px;
     position: absolute;
@@ -279,19 +293,19 @@
 }
 
 .location .location-8-button {
+    position: absolute;
     height: 66px;
     left: 650px;
-    position: absolute;
     top: 4359px;
     width: 327px;
 }		
 
 .location .title {
-    height: 105px;
-    left: 92px;
     position: absolute;
-    top: 19px;
-    width: 142px;
+    height: 104.77px;
+    left: 92.08px;
+    top: 189.25px;
+    width: 141.53px;
 }
 
 .location .button {
