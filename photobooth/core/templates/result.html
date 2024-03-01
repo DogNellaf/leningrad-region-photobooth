@@ -34,7 +34,7 @@
 		</form>
 	</div>
 	<script>
-		let url = window.location.hostname + '{% static photo_url %}';
+		let url = "http://" + window.location.hostname + '{% static photo_url %}';
 		url = url.replace('http', 'https')
 		console.log(url);
 
