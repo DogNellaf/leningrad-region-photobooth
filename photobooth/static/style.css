@@ -247,71 +247,52 @@ body {
 }
 
 .result {
+    position: relative;
     background-color: var(--purple-heart);
     height: 568px;
     overflow: hidden;
-    overflow-x: hidden;
-    position: relative;
 }
 
 .result .location {
-    height: 390px;
-    left: 555px;
-    object-fit: cover;
     position: absolute;
-    top: 58px;
-    width: 694px;
-}
-
-.result .vector-2-Ix1nMc {
-    height: 273px;
-    left: 919px;
-    position: absolute;
-    top: 165px;
-    width: 112px;
-}
-
-.result .person {
-    height: 462px;
-    left: 837px;
-    object-fit: cover;
-    position: absolute;
-    top: 117px;
-    width: 309px;
+    height: 364px;
+    left: 578px;
+    top: 97px;
+    width: 669px;
 }
 
 .result .background {
+    position: absolute;    
     height: 768px;
     left: 173px;
-    position: absolute;
     width: 1143px;
     top: -90px;
 }
 
 .result .frame {
+    position: absolute;
     height: 364px;
     left: 578px;
-    position: absolute;
     top: 97px;
     width: 669px;
 }
 
 .result .button-back {
+    position: absolute;    
     background-color: var(--onahau);
     border-radius: 15px;
     height: 50px;
     left: 614px;
-    position: absolute;
     top: 504px;
     width: 244px;
 }
 
 .result .button-index {
+    position: absolute;    
     background-color: var(--onahau);
     border-radius: 15px;
     height: 50px;
     left: 980px;
-    position: absolute;
     top: 504px;
     width: 244px;
 }
