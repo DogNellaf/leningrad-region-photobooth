@@ -1,0 +1,567 @@
+
+@import url('./reset.min.css');
+@font-face {
+    font-family: "Bebas Neue Cyrillic-Regular";
+    font-style: bold;
+    font-weight: 400;
+    src: url('./bebasneue-regular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v141/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+body {
+    overflow-y: hidden;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+:root {
+    --black: #000000;
+    --onahau: #ccffff;
+    --purple-heart: #5b43e4;
+    --font-size-l: 30px;
+    --font-size-m: 20px;
+    --font-size-xl: 40px;
+    --font-family-bebas_neue_cyrillic-regular: "Bebas Neue Cyrillic-Regular", Helvetica;
+}
+
+.vector {
+    position: absolute;
+}
+
+.container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.index .slade-1 {
+    left: 762px;
+    position: absolute;
+    top: 85px;
+    width: 407px;
+}
+
+.index .woman-1 {
+    left: 711px;
+    top: 29px;
+    width: 459px;
+}
+
+.index .slade-2 {
+    left: 808px;
+    position: absolute;
+    top: 170px;
+    width: 427px;
+}
+
+.index .woman-2 {
+    left: 822px;
+    top: 129px;
+    width: 474px;
+}
+
+.index .slade-3 {
+    left: 796px;
+    position: absolute;
+    top: 335px;
+    width: 423px;
+}
+
+.index .woman-3 {
+    left: 786px;
+    top: 322px;
+    width: 428px;
+}
+
+.index .frame {
+    left: 700px;
+    position: absolute;
+    top: 38px;
+    width: 592px;
+}
+
+.index .button {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 59px;
+    left: 503px;
+    position: absolute;
+    top: 666px;
+    width: 374px;
+}
+
+.index .button-text {
+    color: var(--purple-heart);
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height:60px;
+    text-align: center;
+}
+
+.index .title {
+    left: 1180px;
+    position: absolute;
+    top: 61px;
+    width: 66px;
+}
+
+.index .try {
+    left: 58px;
+    top: 412px;
+}
+
+.index .trip {
+    left: 58px;
+    top: 347px;
+}
+
+.index .area {
+    left: 57px;
+    top: 178px;
+}
+
+.index .mask-group {
+    position: absolute;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.location {
+    background-color: var(--purple-heart);
+}
+
+.location .title {
+    position: absolute;
+    height: 104.77px;
+    left: 92px;
+    top: 30px;
+    width: 141.53px;
+}
+
+.location .frame {
+    position: absolute;
+    width: 1241px;
+    left: 59px;
+    top: 100px;
+    background: no-repeat;
+    background-image: url(./location/frame.svg);
+}
+
+.location .locations-div {
+    position: relative;
+    margin-top: 100px !important;
+    height: 626px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.location .locations-div::-webkit-scrollbar {
+    border-radius: 10px;
+    background-color: white;
+}
+
+.location .locations-div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #5bc7ea;
+}
+
+.location .locations-div .first {
+    background-image: url(./location/location1.jpeg);
+}
+
+.location .locations-div .location-div {
+    position: relative;
+    height: 577px;
+    width: 1029px;
+    margin-top: 25px;
+    margin-left: 105px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.location .locations-div .button-div {
+    padding-top: 486px;
+}
+
+.location .locations-div .locations-div-block {
+    display: block;
+}
+
+.location .locations-div .location-button {
+    height: 66px;
+    width: 327px;
+    margin-left: 351px;
+}
+
+.location .button {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 66px;
+    width: 325px;
+    z-index:15;
+}
+
+.location .button-text {
+    color: var(--purple-heart);
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    line-height: 70px;
+    text-align: center;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result {
+    position: relative;
+    background-color: var(--purple-heart);
+    height: 568px;
+    overflow: hidden;
+}
+
+.result .location {
+    position: absolute;
+    height: 364px;
+    left: 578px;
+    top: 97px;
+    width: 669px;
+}
+
+.result .background {
+    position: absolute;    
+    height: 768px;
+    left: 173px;
+    width: 1143px;
+    top: -90px;
+}
+
+.result .frame {
+    position: absolute;
+    height: 364px;
+    left: 578px;
+    top: 97px;
+    width: 669px;
+}
+
+.result .button-back {
+    position: absolute;    
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 50px;
+    left: 614px;
+    top: 504px;
+    width: 244px;
+}
+
+.result .button-index {
+    position: absolute;    
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 50px;
+    left: 980px;
+    top: 504px;
+    width: 244px;
+}
+
+.result .button-email {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    border: none; 
+    height: 50px;
+    left: 260px;
+    position: absolute;
+    top: 504px;
+    width: 165px;
+    color: #551a8b;
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+}
+
+.result .input-email {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    border: none; 
+    height: 50px;
+    left: 70px;
+    position: absolute;
+    top: 504px;
+    width: 165px;
+}
+
+.result .qr {
+    height: 210px;
+    left: 139px;
+    object-fit: cover;
+    position: absolute;
+    top: 137px;
+    width: 210px;
+}
+
+.result .text-under-qr {
+    color: #ffffff;
+    height: 56px;
+    left: 16px;
+    top: 388px;
+    width: 467px;
+}
+
+.result .title {
+    height: 70px;
+    right: 35px;
+    position: absolute;
+    top: 15px;
+    width: 91px;
+}
+
+.result .button-text {
+    font-color: var(--onahau);
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+}
+
+.result .text_label {
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+}
+
+.snap {
+  background-color: var(--purple-heart);
+  height: 768px;
+  position: relative;
+  width: 1366px;
+}
+
+.snap .background {
+  height: 768px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.snap .frame {
+  height: 672px;
+  left: 202px;
+  position: absolute;
+  top: 36px;
+  width: 985px;
+}
+
+.snap .canvas-editor {
+    height: 672px;
+    left: 160px;
+    position: absolute;
+    top: 110px;
+    width: 985px;
+  }
+
+.snap .title {
+  height: 50px;
+  left: 1232px;
+  top: 43px;
+}
+
+#photo {
+    height: 672px;
+    left: 202px;
+    position: absolute;
+    top: 36px;
+    width: 985px;
+}
+
+#webcam {
+    height: 672px;
+    left: 202px;
+    position: absolute;
+    top: 36px;
+    width: 985px;
+}
+
+#timer-display {
+    position: absolute;
+    font-family: var(--font-family-bebas_neue_cyrillic-regular);
+    font-size: 128px;
+    font-weight: 400;
+    line-height: 160px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    height: 160px;
+    width: 51px;
+    left: 683px;
+    top: 254px;
+}
+
+#canvas {
+    height: 672px;
+    left: 94.5px;
+    position: absolute;
+    top: 36px;
+    width: 985px;
+}
+
+.snap .button-text {
+  color: var(--purple-heart);
+  font-family: var(--font-family-bebas_neue_cyrillic-regular);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+}
+
+.snap #button-snap {
+  background-color: var(--onahau);
+  border-radius: 15px;
+  height: 39px;
+  left: 589px;
+  position: absolute;
+  top: 730px;
+  width: 188px;
+}
+
+.snap #button-resnap {
+  background-color: var(--onahau);
+  border-radius: 15px;
+  height: 39px;
+  left: 389px;
+  position: absolute;
+  top: 730px;
+  width: 188px;
+}
+
+.snap #button-next {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 39px;
+    left: 789px;
+    position: absolute;
+    top: 730px;
+    width: 188px;
+}
+
+.snap #button-next-editor {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 39px;
+    left: 578px;
+    position: absolute;
+    top: 700px;
+    width: 188px;
+}
+  
+.keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: #004134;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+    width: 12%;
+}
+
+.keyboard__key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+}

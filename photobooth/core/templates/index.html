@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="index screen">
+		<img class="title" src="{% static 'title.png' %}">
+		<img class="frame" src="{% static 'index/frame.svg' %}">
+		<img class="slade-1" src="{% static 'index/slide1.png' %}">
+		<img class="woman-1 mask-group" src="{% static 'index/woman1.png' %}">
+		<img class="slade-2" src="{% static 'index/slide2.png' %}">
+		<img class="woman-2 mask-group" src="{% static 'index/woman2.png' %}">
+		<img class="slade-3" src="{% static 'index/slide3.png' %}">
+		<img class="woman-3 mask-group" src="{% static 'index/woman3.png' %}">
+		<div class="button">
+			<a href="{% url 'snap' %}">
+				<h1 class="button-text">НАЧАТЬ ПУТЕШЕСТВИЕ</h1>
+			</a>
+		</div>
+		<img class="try vector" src="{% static 'index/try.svg' %}">
+		<img class="trip vector" src="{% static 'index/trip.svg' %}">
+		<img class="area vector" src="{% static 'index/area.svg' %}">
+	</div>
+{% endblock content %}

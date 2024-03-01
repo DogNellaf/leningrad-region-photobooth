@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+        <div class="snap screen">
+            <div class="canvas-editor">
+                <canvas id="canvas" width="1029" height="577"></canvas> 
+            </div>
+            
+            <div id="button-next-editor" onclick="next()">
+                <h1 class="button-text">ДАЛЕЕ</h1>
+            </div>
+            
+            <img class="title vector" src="{% static 'title.png' %}">
+        </div>
+    </div>
+    <script>
+        const canvas = new fabric.Canvas('canvas');
+
+        fabric.Image.fromURL('{% static location_title %}', function(bgImg) {
+            bgImg.set({
+                selectable: false,
+                evented: false,
+                top: 0,
+                left: 0,
+                scaleX: canvas.width/bgImg.width,
+                scaleY: canvas.height/bgImg.height,
+            });
+            canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas));
+        });
+        
+        fabric.Image.fromURL('{% static snap_url %}', function(img) {
+            img.set({
+                left: 500,
+                top: 250,
+                scaleX: 0.5,
+                scaleY: 0.5,
+                selectable: true,
+                hasControls: true,
+                hasBorders: true,
+                cornerColor: 'blue',
+                cornerSize: 10
+            });
+            canvas.add(img);
+        });
+
+        function next() {
+            let url = canvas.toDataURL({ format: 'png' }).replace("data:image/png;base64,", "");
+            let formUrl = "{% url 'save_image' %}";
+            fetch(formUrl, {
+                method: 'POST',
+                body: url,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token  }}'
+                }
+            }).then(response => response.json()).then(result => {
+                image = result["image_name"];
+                snap = '{{snap_url}}'.replace('snaps', '')
+                window.location.replace('result' + snap + '/' + image);
+            });
+        }
+    </script>
+{% endblock content %}

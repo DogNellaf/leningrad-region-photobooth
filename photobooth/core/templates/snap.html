@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<script crossorigin type="text/javascript" src="{% static 'snap/webcam-easy.min.js' %}"></script>
+<div class="frame" id="timer-display"></div>
+<div class="snap screen ">
+  <img id="photo"/>
+  <video id="webcam" height="672px" width="985px" autoplay playsinline></video>
+  <canvas hidden id="canvas" class="d-none"></canvas>
+
+  <img class="background" src="{% static 'snap/background.png' %}">
+  <img class="frame" src="{% static 'snap/frame.svg' %}">
+  <div hidden id="button-resnap" onclick="resnap()">
+    <h1 class="button-text">ПЕРЕСНЯТЬ</h1>
+  </div>
+  <div id="button-snap" onclick="snap()">
+    <h1 class="button-text">СДЕЛАТЬ ФОТО</h1>
+  </div>
+  <div hidden id="button-next" onclick="next()">
+    <h1 class="button-text">ДАЛЕЕ</h1>
+  </div>
+  <img class="title vector" src="{% static 'title.png' %}">
+</div>
+</div>
+<script>
+  const webcamElement = document.getElementById('webcam');
+  const canvasElement = document.getElementById('canvas');
+  const webcam = new Webcam(webcamElement, 'user', canvasElement);
+  const photo = document.querySelector('#photo');
+  let picture = null;
+  is_hidden = false;
+  webcam.start()
+  .then(result =>{
+    console.log("webcam started");
+  })
+  .catch(err => {
+    console.log(err);
+  })	;
+  
+  function snap() {
+    if (!is_hidden) {
+      startTimer();
+      is_hidden = true;
+    }
+  }
+
+  function startTimer() {
+    let secondsLeft = 5;
+    timer = setInterval(() => {
+      document.getElementById('timer-display').textContent = secondsLeft;
+      secondsLeft--;
+      if (secondsLeft < 0) {
+        clearInterval(timer);
+        picture = webcam.snap();
+        photo.setAttribute("src", picture);
+        document.querySelector('#button-snap').setAttribute("hidden", "hidden");
+        webcamElement.setAttribute("hidden", "hidden");
+        document.querySelector('#button-resnap').removeAttribute("hidden");
+        document.querySelector('#button-next').removeAttribute("hidden");
+        document.getElementById('timer-display').textContent = "";
+      }
+    }, 1000);
+  }
+
+  function clearTimer() {
+    clearInterval(timer);
+    document.getElementById('timer-display').textContent = ''; // Очистка надписи
+  }
+
+  function resnap() {
+    clearTimer();
+    photo.removeAttribute("src");
+    document.querySelector('#button-snap').removeAttribute("hidden");
+    webcamElement.removeAttribute("hidden");
+    is_hidden = false;
+    document.querySelector('#button-resnap').setAttribute("hidden", "hidden");
+    document.querySelector('#button-next').setAttribute("hidden", "hidden");
+  }
+
+  function next() {
+    let formUrl = "{% url 'save_snap' %}";
+    fetch(formUrl, {
+        method: 'POST',
+        body: photo.src.replace('data:image/png;base64,',''),
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token  }}'
+        }
+    }).then(response => response.json()).then(result => {
+        image_name = result["image_name"];
+        window.location.replace("location/" + image_name);
+    });
+  }
+</script>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<script src="{% static 'result/keyboard.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<div class="result screen">
+		<img class="location" src="{% static photo_url %}">
+		
+		<img class="background" src="{% static 'result/background.svg' %}">
+		<img class="frame" src="{% static 'result/frame.svg' %}">
+		<a href="{% url 'location' snap_url %}">
+			<div class="button-back">
+				<h1 class="button-text">
+					НАЗАД
+				</h1>
+			</div>
+		</a>
+		<a href="{% url 'index' %}">
+			<div class="button-index">
+				<h1 class="button-text">
+					В НАЧАЛО
+				</h1>
+			</div>
+		</a>
+		<p class="text-under-qr valign-text-middle text_label">Наведите камеру своего телефона
+		<br>и скачайте фото</p>
+		<div id="qrcode" class="qr"></div>
+		<img class="title" src="{% static 'title.png' %}">
+		<form method="post" action="{% url 'send_email' %}"> 
+			{% csrf_token %}
+			<input class="use-keyboard-input input-email" type="email" name="email" placeholder="Email"/>
+			<input hidden type="text" name="snap_url" value="{{snap_url}}"/>
+			<input hidden type="text" name="photo_url" value="{{photo_url}}"/>
+			<input class="button-email " type="submit" value="Отправить"/> 
+		</form>
+	</div>
+	<script>
+		let url = "http://" + window.location.hostname + '{% static photo_url %}';
+		url = url.replace('http', 'https')
+		console.log(url);
+
+		new QRCode(document.getElementById("qrcode"), {
+			text: url, // Введите здесь текст или URL-адрес, который вы хотите закодировать в QR-код
+			width: 219, // Ширина QR-кода в пикселях
+			height: 210, // Высота QR-кода в пикселях
+			colorDark: "#000000", // Цвет кода
+			colorLight: "#ffffff", // Цвет фона
+			correctLevel: QRCode.CorrectLevel.H, // уровень исправления ошибок
+		});
+	</script>
+{% endblock content %}

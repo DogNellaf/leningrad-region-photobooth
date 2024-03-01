@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1366, maximum-scale=1.0">
+		<meta name="og:type" content="website">
+        <base href="/">
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="">
+		<style>
+            {% block style %}{% endblock style %}
+        </style>
+    </head>
+	<body style="margin: 0; background: #5b43e4;">
+        {% block content %}{% endblock content %}
+	</body>
+</html>
