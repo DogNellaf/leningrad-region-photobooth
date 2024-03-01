@@ -474,13 +474,13 @@ body {
 }
 
 .snap #button-next {
-  background-color: var(--onahau);
-  border-radius: 15px;
-  height: 39px;
-  left: 578px;
-  position: absolute;
-  top: 700px;
-  width: 188px;
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 39px;
+    left: 789px;
+    position: absolute;
+    top: 730px;
+    width: 188px;
 }
 
 .snap #button-next-editor {
