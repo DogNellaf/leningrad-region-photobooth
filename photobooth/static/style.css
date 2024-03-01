@@ -14,6 +14,10 @@
     src: url(https://fonts.gstatic.com/s/materialicons/v141/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
   }
   
+body {
+    overflow-y: hidden;
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -154,25 +158,41 @@
 
 .location {
     background-color: var(--purple-heart);
-    position: relative;
-    /* height: 100vh; */
-    /* overflow: hidden; */
+}
+
+.location .title {
+    position: absolute;
+    height: 104.77px;
+    left: 92px;
+    top: 30px;
+    width: 141.53px;
 }
 
 .location .frame {
     position: absolute;
     width: 1241px;
     left: 59px;
-    top: 258px;
+    top: 100px;
     background: no-repeat;
     background-image: url(./location/frame.svg);
 }
 
 .location .locations-div {
     position: relative;
-    margin-top: 140px !important;
+    margin-top: 100px !important;
+    height: 626px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.location .locations-div::-webkit-scrollbar {
+    border-radius: 10px;
+    background-color: white;
+}
+
+.location .locations-div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #5bc7ea;
 }
 
 .location .locations-div .first {
@@ -180,132 +200,27 @@
 }
 
 .location .locations-div .location-div {
-    position: block;
+    position: relative;
     height: 577px;
     width: 1029px;
     margin-top: 25px;
     margin-left: 105px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.location .locations-div .button-div {
+    padding-top: 486px;
+}
+
+.location .locations-div .locations-div-block {
+    display: block;
 }
 
 .location .locations-div .location-button {
     height: 66px;
     width: 327px;
-    margin-left: 32%;
-}
-
-.location .location2 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 790px;
-}
-
-.location .location-2-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 1209px;
-    width: 327px;
-}
-
-.location .location3 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 1315px;
-}
-
-
-.location .location-3-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 1734px;
-    width: 327px;
-}
-
-.location .location4 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 1840px;
-}
-
-.location .location-4-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 2259px;
-    width: 327px;
-}
-
-.location .location5 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 2365px;
-}
-
-.location .location-5-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 2784px;
-    width: 327px;
-}
-
-.location .location6 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 2890px;
-}
-
-.location .location-6-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 3309px;
-    width: 327px;
-}
-
-.location .location7 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 3415px;
-}
-
-.location .location-7-button {
-    height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 3834px;
-    width: 327px;
-}		
-
-.location .location8 {
-    height: 500px;
-    left: 370px;
-    position: absolute;
-    top: 3940px;
-}
-
-.location .location-8-button {
-    position: absolute;
-    height: 66px;
-    left: 650px;
-    top: 4359px;
-    width: 327px;
-}		
-
-.location .title {
-    position: absolute;
-    height: 104.77px;
-    left: 92.08px;
-    top: 189.25px;
-    width: 141.53px;
+    margin-left: 351px;
 }
 
 .location .button {

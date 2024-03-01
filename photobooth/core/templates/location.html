@@ -1,67 +1,103 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 	<div class="location screen">
 		<img class="title" src="{% static 'title.png' %}">
-		<div class="frame"> 
-			<div class="locations-div">
-				<div class="first location-div">
+			<div class="frame"> 
+				<div class="locations-div">
+					<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location1.jpeg' %}">
-						<div class="location-button button">
-							<div class="button-text valign-text-middle">Выбрать локацию</div>
+						<div class="first location-div">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
 					</a>
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location2.jpeg' %})">
+				<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location2.jpeg' %}">
-						<div class="location-button">
-							<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location2.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
 					</a>
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location3.jpeg' %})">
+					<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location3.jpeg' %}">
-						<div class="location-button">
-							<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location3.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
-					</a>	
+					</a>
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location4.jpeg' %})">
+					<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location4.jpeg' %}">
-						<div class="location-button">
-							<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location4.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
-					</a>	
+					</a>
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location5.jpeg' %})">
+				<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location5.jpeg' %}">
-						<div class="location-button">	
-							<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location5.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">	
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
 					</a>	
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location6.jpeg' %})">
+				<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location6.jpeg' %}">
-						<div class="location-button">
-							<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location6.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
-					</a>	
+					</a>
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location7.jpeg' %})">
+				<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location7.jpeg' %}">
-						<div class="location-button">
-								<div class="button-text valign-text-middle ">Выбрать локацию</div>
+						<div class="location-div" style="background-image:url({% static 'location/location7.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
 						</div>
 					</a>	
 				</div>
-				<div class="location-div" style="background-image:url({% static 'location/location8.jpeg' %})">
+				<div class="locations-div-block">
 					<a href="{% url 'editor' snap_url 'location8.jpeg' %}">
-						<div class="location-button">
-								<div class="button-text valign-text-middle ">Выбрать локацию</div>
-						</div>
-					</a>	
-				</div>				
+						<div class="location-div" style="background-image:url({% static 'location/location8.jpeg' %})">
+							<div class="button-div"> 
+								<div class="location-button button">
+									<div class="button-text valign-text-middle ">Выбрать локацию</div>
+								</div>
+							</div>
+						</div>	
+					</a>			
+				</div>
+				<div class="locations-div-block">
+						<div class="location-div" style="height: 50px;">
+
+						</div>			
+				</div>
 			</div>
 		</div>
 	</div>
