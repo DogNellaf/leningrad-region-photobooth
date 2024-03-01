@@ -412,9 +412,9 @@ body {
 
 .snap .canvas-editor {
     height: 672px;
-    left: 350px;
+    left: 160px;
     position: absolute;
-    top: 130px;
+    top: 110px;
     width: 985px;
   }
 
@@ -457,7 +457,7 @@ body {
 
 #canvas {
     height: 672px;
-    left: 202px;
+    left: 94.5px;
     position: absolute;
     top: 36px;
     width: 985px;
@@ -496,12 +496,22 @@ body {
   background-color: var(--onahau);
   border-radius: 15px;
   height: 39px;
-  left: 789px;
+  left: 578px;
   position: absolute;
-  top: 730px;
+  top: 700px;
   width: 188px;
 }
 
+.snap #button-next-editor {
+    background-color: var(--onahau);
+    border-radius: 15px;
+    height: 39px;
+    left: 578px;
+    position: absolute;
+    top: 700px;
+    width: 188px;
+}
+  
 .keyboard {
     position: fixed;
     left: 0;
