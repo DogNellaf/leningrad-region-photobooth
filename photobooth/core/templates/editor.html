@@ -56,11 +56,9 @@
                     'X-CSRFToken': '{{ csrf_token  }}'
                 }
             }).then(response => response.json()).then(result => {
-                image_name = result["image_name"];
+                image = result["image_name"];
                 snap = '{{snap_url}}'.replace('snaps', '')
-                image = image_name
-                url = 'путешествиеполенобласти.рф/result/' + snap + '/' + image
-                window.location.replace(url);
+                window.location.replace('result/' + snap + '/' + 'result/' + snap + '/' + image);
             });
         }
     </script>
