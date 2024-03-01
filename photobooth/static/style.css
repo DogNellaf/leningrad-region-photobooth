@@ -155,43 +155,43 @@
 .location {
     background-color: var(--purple-heart);
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh; */
+    /* overflow: hidden; */
 }
 
 .location .frame {
     position: absolute;
-    height: 6275px;
     width: 1241px;
     left: 59px;
     top: 258px;
-    overflow-y: scroll;
     background: no-repeat;
     background-image: url(./location/frame.svg);
 }
 
 .location .locations-div {
+    position: relative;
     margin-top: 140px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .location .locations-div .first {
     background-image: url(./location/location1.jpeg);
 }
 
-.location .locations-div div {
+.location .locations-div .location-div {
     position: block;
     height: 577px;
     width: 1029px;
     margin-top: 25px;
     margin-left: 105px;
+    background-size: cover;
 }
 
-.location .locations-div div button {
+.location .locations-div .location-button {
     height: 66px;
-    left: 650px;
-    position: absolute;
-    top: 684px;
     width: 327px;
+    margin-left: 32%;
 }
 
 .location .location2 {
